@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  grade: 1
+  goal: MyString
+  subject: MyString
+  learning_disability: false
+  learning_disability_type: MyString
+  experience: 1
+  education: MyString
+  price_per_hr: 1
+  specialty: MyString
+  hires: 1
+  rating: 1.5
+  active: false
+
+two:
+  username: MyString
+  password: MyString
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  grade: 1
+  goal: MyString
+  subject: MyString
+  learning_disability: false
+  learning_disability_type: MyString
+  experience: 1
+  education: MyString
+  price_per_hr: 1
+  specialty: MyString
+  hires: 1
+  rating: 1.5
+  active: false
