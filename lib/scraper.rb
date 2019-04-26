@@ -24,8 +24,8 @@ def scraper_full_address
   wework_locations.each do |wework_location|
     weworks << wework_location.css('div.sc-bxivhb.dHqnfT').text
   end
-  weworks
   puts weworks.count
+  weworks
 end
 
 scraper_address
