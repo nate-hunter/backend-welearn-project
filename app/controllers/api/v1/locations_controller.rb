@@ -37,7 +37,6 @@ module Api
 
       def get_location
         @location = Location.find(params[:id])
-        render json: @location
       end
 
       def locations_params

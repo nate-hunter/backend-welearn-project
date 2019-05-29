@@ -2,6 +2,7 @@ module Api
   module V1
     class BookingsController < ApplicationController
       before_action :get_booking, only: [:show, :update, :delete]
+      skip_before_action :authorized, only: [:index, :show]
 
       def index
         @bookings = Booking.all
@@ -12,7 +13,7 @@ module Api
       end
 
       def create
-        @booking = Booking.new(bookings_params)
+        @booking = Booking.new(booking_params)
         if @booking.save
           render json: @booking
         else
@@ -21,7 +22,7 @@ module Api
       end
 
       def update
-        if @booking.update(bookings_params)
+        if @booking.update(booking_params)
           render json: @booking
         else
           render json: {status: 'ERROR', message: 'Booking was not able to be update', data: @booking.errors}, status: :unproccessable_entity
@@ -37,11 +38,10 @@ module Api
 
       def get_booking
         @booking = Booking.find(params[:id])
-        render json: @booking
       end
 
-      def bookings_params
-        params.permit(:student_id, :tutor_id, :location_id, :date, :time, :session_length, :session_cost, :available)
+      def booking_params
+        params.permit(:id, :student_id, :session_length, :session_cost, :available)
       end
     end
   end
